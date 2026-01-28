@@ -1,0 +1,36 @@
+.menu_container {
+  height: 250px;
+  width: 310px;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  border: 1px solid rgba(44, 43, 43, 0.486);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.4rem;
+  z-index: 1000;
+  background: none;
+}
+
+.menu_options_container {
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.menu_options_hold {
+  width: fit-content;
+  overflow: hidden;
+}
+.menu_options {
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform-origin: left;
+}
+
+.menu_options:hover {
+  width: 100%;
+}

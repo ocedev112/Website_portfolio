@@ -1,0 +1,161 @@
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  flex-direction: column;
+  min-height: 100%;
+  height: auto;
+  max-width: 100dvw;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  overflow-x: hidden;
+  border: 1px solid black;
+  font-family: "Anek Malayalam", sans-serif;
+  padding: 0px;
+  top: 0;
+}
+
+@media (max-width: 900px) {
+  .hero_container {
+    gap: 0.1rem;
+  }
+  .hero_title {
+    font-size: 2.2rem;
+  }
+
+  .hero_name {
+    font-size: 0.9rem;
+  }
+
+  .menu_container {
+    height: 50px !important;
+    width: 100vw !important;
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    gap: 0.1rem;
+    flex-direction: row !important;
+    border-right: 0px solid !important;
+    border-left: 0px solid !important;
+  }
+  .menu_options_container {
+    width: 120px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu_options {
+    font-size: 0.9rem;
+    text-align: center !important;
+    width: 100%;
+    border-bottom: 0px solid;
+  }
+
+  .profile {
+    font-size: 200%;
+  }
+
+  .profile_container {
+    align-items: start !important;
+  }
+}
+
+a {
+  color: black;
+  font-weight: bold;
+}
+
+a:hover {
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .project_title {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 667px) {
+    .project_container {
+      width: 100% !important;
+    }
+
+    .profile_section_1 {
+      min-height: 50svh !important;
+      width: 37% !important;
+    }
+
+    .profile_section_2 {
+      min-height: 50svh !important;
+      width: 6% !important;
+    }
+    .profile_section_2::after {
+      transform: translate(147%, -33%) !important;
+    }
+    .profile_section_3 {
+      width: 41% !important;
+    }
+
+    .profile_name {
+      width: 100% !important;
+      font-size: 1.5rem !important;
+    }
+    .profile_tools {
+      gap: 0.3rem !important;
+    }
+
+    .profile_tool {
+      height: 40px !important;
+      width: 40px !important;
+      position: relative;
+      right: 20%;
+    }
+    .profile_section_3 {
+      width: 42% !important;
+      transform: translateX(0%);
+    }
+
+    .profile_paragraph {
+      padding: 1px !important;
+      font-size: 0.9rem;
+    }
+
+    .profile_prog_lang {
+      width: 90dvw !important;
+      position: relative;
+      right: 50%;
+    }
+
+    .profile_domains {
+      width: 90dvw !important;
+      position: relative;
+      right: 45%;
+    }
+
+    .profile_tools {
+      width: 100dvw;
+    }
+
+    .profile_contacts {
+      width: 100dvw;
+      position: relative;
+      right: 50%;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .project_container {
+    width: 50%;
+  }
+
+  .scroll_container {
+    display: none;
+  }
+}

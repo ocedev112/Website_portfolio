@@ -1,0 +1,231 @@
+.profile_container{
+    min-height: 100vh;
+    height: auto;
+    width: 100dvw;
+    background: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.profile_section_1{
+    min-height: 100svh;
+    height: auto;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.1rem;
+    background: white;
+    z-index: 100;
+    border: 1px solid black;
+    border-right: 0px solid;
+}
+
+
+
+.profile_image{
+    aspect-ratio: 1/ 1;
+    width: 90%;
+    background-image: url("../image/profile.webp");
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(100%);
+    filter: brightness(150%), grayscale(100%), contrast(150%);
+}
+
+.profile_name{
+    font-size: 2.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.profile_role{
+    margin-bottom: 30px;
+    color: rgba(0, 0, 0, 0.563);
+}
+
+.profile_section_2{
+    min-height: 100svh;
+    width: 5%;
+    border: 1px solid black;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background: white;
+    z-index: 100;
+
+   
+}
+
+.profile_section_2::after{
+    height: 30%;
+    width: 2.5%;
+    content: "";
+    position: absolute;
+ 
+    background: white;
+    transform: translate(147%,-117%);
+    border: 1px solid black;
+    border-left: 0px solid white;
+    z-index: 100;
+    
+}
+
+.profile{
+    font-size: 200%;
+    font-weight: 600;
+    transform: rotate('90deg');
+    text-transform: uppercase;
+    rotate: 90deg;
+}
+
+
+
+.profile_section_3{
+    min-height: 100%;
+    height: auto;
+    width: 43%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 4%;
+    transform: translateX(-100%);
+    transition: all 0.9s ease;
+    opacity: 0;
+}
+
+
+
+.profile_paragraph{
+    height: 50%;
+    width: 100%;
+    padding: 10px;
+    padding-top: 50px;
+ 
+}
+
+.profile_prog_lang{
+    padding-left: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.2rem;
+   
+    
+}
+
+.languages{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    ;
+}
+
+.lang_header{
+
+    width: 100%;
+    background: rgba(51, 50, 50, 0.348);
+}
+
+.profile_domains{
+    height: 180px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.profile_domain{
+    height: 200px;
+    width: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.profile_domain_icon{
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+}
+
+.profile_tools{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.profile_tool{
+    height: 60px;
+    width: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.29);
+    background-size: cover;
+}
+
+#react{
+    background-image: url("../image/react-svgrepo-com.svg")
+}
+
+#tensorflow{
+    background-image: url("../image/tensorflow-svgrepo-com.svg");
+}
+
+#pytorch{
+    background-image: url("../image/pytorch-svgrepo-com.svg");
+}
+
+
+#mongodb{
+    background-image: url("../image/mongodb-svgrepo-com.svg");
+}
+
+#next{
+    background-image: url("../image/next-js-svgrepo-com.svg");
+}
+
+
+#web_icon{
+    background-image: url("../image/web-svgrepo-com.svg");  
+}
+.profile_contacts{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.contact_icon{
+   height: 40px;
+   width: 40px;
+   background-size: cover;
+}
+#profile_linkedin_icon{
+   background-image: url("../image/linkedin-rounded-svgrepo-com.svg");
+}
+
+#profile_gmail_icon{
+    background: url("../image/brand-google-gmail-svgrepo-com.svg");
+    background-size: 100%;
+}
+
+#ML_AI_icon{
+    background-image: url("../image/machine-learning-03-svgrepo-com.svg");
+}

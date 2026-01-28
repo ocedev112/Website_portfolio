@@ -1,0 +1,113 @@
+.main_project_container {
+  min-height: 100vh;
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  padding-top: 70px;
+  padding-bottom: 150px;
+}
+
+.main_project_container::after {
+  min-height: 100vh;
+  height: auto;
+  width: 100dvw;
+  position: absolute;
+  content: "";
+  background: black;
+  top: 100vh;
+  z-index: 999;
+}
+
+.project_container {
+  min-height: 100vh;
+  height: auto;
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 3.5em 3em;
+  background: black;
+  z-index: 10000;
+}
+
+.project_hero {
+  color: white;
+  font-size: 2.1rem;
+  font-weight: 600;
+  text-align: center;
+  z-index: 1000000;
+  background: black;
+  transform: translateY(90px);
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    transform 0.6s ease;
+}
+
+.project_hero_sub {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 80px;
+  z-index: 10000;
+  background: black;
+  transform: translateY(90px);
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    transform 0.8s ease;
+}
+
+.project_card {
+  color: black;
+  min-height: 200px;
+  max-width: 95%;
+  padding: 5px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  padding-left: 20px;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 300ms ease;
+  z-index: 14;
+}
+
+.project_card::after {
+  height: 30px;
+  width: 250px;
+  background: white;
+  position: absolute;
+  transform: translate(-20px, -35px);
+  z-index: 0;
+  content: "";
+  clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
+}
+
+.project_description {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.529);
+}
+
+.project_card:hover {
+  transform: scale(1.05);
+}
+
+.project_card_box {
+  height: auto;
+  width: 95%;
+  background: rgba(74, 71, 71, 0.149);
+  padding: 5px;
+}
+
+.project_link a {
+  background: black;
+  padding: 6px;
+  color: white;
+  color: white;
+  font-size: 0.9rem;
+}

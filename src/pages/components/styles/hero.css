@@ -1,0 +1,82 @@
+
+.main_body{
+    display: grid;
+    background: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100svh;
+    width: 100dvw;
+    gap: 0rem;
+    position: relative;
+    top: 0%;
+ 
+
+    
+
+}
+
+.hero_container{
+    padding: 20px;
+    pointer-events: none;
+    
+  
+     
+}
+
+.hero_title{
+  text-align: center;
+  
+ 
+}
+
+
+.hero_name{
+
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+ 
+}
+
+
+.grid-cell{
+  background-color: none;
+  border: 1px solid rgba(133, 129, 129, 0.247);
+  
+}
+
+
+.grid-cell-glow-0 {
+  background: #706e6e !important;
+  box-shadow: 0 0 20px rgba(127, 124, 124, 0.8);
+  background-attachment: fixed;
+  
+}
+
+.grid-cell-glow-1 {
+  background: #434544 !important;
+  box-shadow: 0 0 20px rgba(47, 48, 48, 0.8);
+  background-attachment: fixed;
+  
+}
+
+.grid-cell-glow-2 {
+  background: #2c2d2d !important;
+  box-shadow: 0 0 20px rgba(30, 31, 31, 0.8);
+  background-attachment: fixed;
+  
+}
+
+.grid-cell-glow-3 {
+  background: #111211 !important;
+  box-shadow: 0 0 20px rgba(13, 13, 13, 0.8);
+  
+}
+
+.cnavas_container{
+  border: 1px solid black;
+  pointer-events: none;
+} 
+
+
+
