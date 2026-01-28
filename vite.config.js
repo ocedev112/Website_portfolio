@@ -8,5 +8,5 @@ export default defineConfig({
   server: {
     allowedHosts: ["unsoaring-sharice-unsplendorously.ngrok-free.dev"],
   },
-  base: process.env.VITE_BASE_PATH || "/Website_portfolio",
+  base: "/",
 });
