@@ -1,6 +1,7 @@
-import Hero from "./components/hero";
+import { Landing } from "./components";
 import { Menu } from "./components";
 import { Projects } from "./components";
+import { Skills } from "./components";
 import { Profile } from "./components";
 import { Meeting } from "./components";
 import { useEffect, useState, useRef } from "react";
@@ -18,28 +19,12 @@ export function HomePage() {
     }
   };
 
-  useEffect(() => {
-    const handleParallax = () => {
-      if (heroRef.current && window.innerWidth > 768) {
-        const scrollY = window.scrollY;
-        const newPosition = 0.45 * scrollY;
-
-        heroRef.current.style.transform = `translateY(${newPosition}px)`;
-      }
-    };
-
-    window.addEventListener("scroll", handleParallax);
-
-    return () => {
-      window.removeEventListener("scroll", handleParallax);
-    };
-  }, []);
-
   return (
     <>
-      <Hero ref={heroRef} />
-      <Menu scrollTo={scrollTo} />
+      <Landing scrollTo={scrollTo} />
+
       <Projects ref={projectRef} />
+      <Skills />
       <Profile ref={profileRef} />
       <Meeting />
     </>

@@ -1,6 +1,4 @@
 import {
-  lazy,
-  Suspense,
   useState,
   useEffect,
   useRef,
@@ -8,12 +6,9 @@ import {
   useCallback,
   forwardRef,
 } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
+
 import "./styles/body.css";
 import "./styles/hero.css";
-
-const Laptop = lazy(() => import("../../../public/Scene.jsx"));
 
 const GridCell = memo(({ glowClass, onMouseEnter }) => (
   <div
@@ -24,7 +19,7 @@ const GridCell = memo(({ glowClass, onMouseEnter }) => (
 
 GridCell.displayName = "GridCell";
 
-const Hero = forwardRef((props, ref) => {
+const Hero = () => {
   const [windowSize, setWindowSize] = useState({ width: 1920, height: 1080 });
   const [grid, setGrid] = useState({ rows: 20, cols: 20, quantity: 400 });
   const [glowGrid, setGlowGrid] = useState([]);
@@ -93,110 +88,65 @@ const Hero = forwardRef((props, ref) => {
 
   const canvasRef = useRef(null);
 
-  useEffect(() => {
-    const canvas = canvasRef.current?.querySelector("canvas");
-
-    const handleContextLost = (event) => {
-      event.preventDefault();
-      console.log("WebGL context lost. Attempting to restore...");
-    };
-
-    const handleContextRestored = () => {
-      console.log("WebGL context restored");
-    };
-
-    if (canvas) {
-      canvas.addEventListener("webglcontextlost", handleContextLost);
-      canvas.addEventListener("webglcontextrestored", handleContextRestored);
-    }
-
-    return () => {
-      if (canvas) {
-        canvas.removeEventListener("webglcontextlost", handleContextLost);
-        canvas.removeEventListener(
-          "webglcontextrestored",
-          handleContextRestored,
-        );
-      }
-    };
-  }, []);
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/portfolio_resume.pdf";
+    link.download = "MyResume.pdf";
+    link.click();
+  };
 
   return (
     <>
-      <div
-        className="main_body"
-        style={{
-          gridTemplateColumns: `repeat(${grid.cols}, 1fr)`,
-          gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
-        }}
-      >
-        {Array.from({ length: grid.quantity }).map((_, index) => (
-          <GridCell
-            key={index}
-            glowClass={getGlowClass(index)}
-            onMouseEnter={() => updateGlowGrid(index)}
-          />
-        ))}
-      </div>
-
-      <div
-        className="hero_container flex flex-col justify-center items-center gap-1 font-futuristic absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
-        ref={ref}
-      >
-        <h1 className="hero_name   uppercase">Olewuenyi Emmanuel</h1>
-        <h2 className="hero_title  text-6xl font-semibold  uppercase">
-          Programming meets Design
-        </h2>
+      <div className="main_body">
         <div
-          className="canvas_container"
-          style={{ width: "min(700px, 90vw)", height: "300px" }}
-          ref={canvasRef}
+          className="grid_body"
+          style={{
+            gridTemplateColumns: `repeat(${grid.cols}, 1fr)`,
+            gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
+          }}
         >
-          <Canvas
-            className="laptopModel w-full h-full"
-            camera={{ position: [0, -0.3, 3.5], fov: 35 }}
-            style={{ pointerEvents: "none" }}
-            dpr={[1, 2]}
-            performance={{ min: 0.5 }}
-            gl={{
-              antialias: windowSize.width >= 768,
-              alpha: true,
-              powerPreference: "high-performance",
-              stencil: false,
-              depth: true,
-              failIfMajorPerformanceCaveat: false,
-              preserveDrawingBuffer: false,
-              premultipliedAlpha: true,
-            }}
-            onCreated={({ gl }) => {
-              gl.domElement.addEventListener(
-                "webglcontextlost",
-                (e) => {
-                  e.preventDefault();
-                },
-                false,
-              );
-            }}
-          >
-            <ambientLight intensity={0.5} />
-            <Suspense fallback={null}>
-              <group
-                position={[0, -0.5, 0]}
-                scale={windowSize.width < 768 ? 0.8 : 1}
-              >
-                <Laptop />
-              </group>
-            </Suspense>
-            <Environment
-              preset="warehouse"
-              resolution={windowSize.width < 768 ? 256 : 512}
-              background={false}
+          {Array.from({ length: grid.quantity }).map((_, index) => (
+            <GridCell
+              key={index}
+              glowClass={getGlowClass(index)}
+              onMouseEnter={() => updateGlowGrid(index)}
             />
-          </Canvas>
+          ))}
+        </div>
+
+        <div className="hero_container flex flex-col justify-center items-center gap-1 font-futuristic absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+          <div className="hero_texts flex flex-col justify-center items-start gap-1">
+            <h1 className="hero_name self-start  uppercase">
+              olewuenyi emmanuel
+            </h1>
+            <h2 className="hero_title  text-7xl font-semibold  uppercase">
+              Building great software
+            </h2>
+          </div>
+          <div className="hero_roles flex justify-center items-center  gap-2 pb-3">
+            <div className="hero_role"> AI/ML Engieering</div>
+            <div className="hero_role">Full Stack Development</div>
+          </div>
+          <div className="hero_buttons flex justify-center items-center  gap-10">
+            <div
+              className="hero_button text-white uppercase"
+              onClick={handleDownload}
+            >
+              View Resume
+            </div>
+            <div
+              className="hero_button contact uppercase"
+              onClick={() =>
+                (window.location.href = "mailto:olewuenyie@example.com")
+              }
+            >
+              Get in touch
+            </div>
+          </div>
         </div>
       </div>
     </>
   );
-});
+};
 
 export default Hero;

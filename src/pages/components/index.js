@@ -4,3 +4,7 @@ export { default as Projects } from "./projects";
 export { default as Profile } from "./profile";
 export { default as Meeting } from "./demo";
 export { default as BookMeeting } from "./bookdemo";
+export { default as Navbar } from "./navbar";
+export { default as Landing } from "./landing";
+export { default as Languages } from "./languages";
+export { default as Skills } from "./skills";

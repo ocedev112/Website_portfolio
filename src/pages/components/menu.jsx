@@ -10,7 +10,7 @@ const Menu = ({ scrollTo }) => {
         <div className="menu_options_container">
           <div className="menu_options_hold">
             <div
-              className="menu_options text-2xl font-bold 
+              className="menu_options  font-bold 
                 uppercase text-start border-b-2 border-black w-[0%]"
               onClick={() => {
                 scrollTo("project");
@@ -23,7 +23,7 @@ const Menu = ({ scrollTo }) => {
         <div className="menu_options_container">
           <div className="menu_options_hold">
             <div
-              className="menu_options text-2xl font-bold 
+              className="menu_options text-m font-bold 
                 uppercase text-start border-b-2 border-black w-[0%]"
               onClick={() => {
                 scrollTo("profile");
@@ -37,10 +37,12 @@ const Menu = ({ scrollTo }) => {
         <div className="menu_options_container">
           <div className="menu_options_hold">
             <div
-              className="menu_options text-2xl font-bold 
+              className="menu_options text-m font-bold 
                 uppercase text-start border-b-2 border-black w-[0%]"
             >
-              <Link to="/book-demo">Meet with me</Link>
+              <Link className="menu_link_demo" to="/book-demo">
+                Meet with me
+              </Link>
             </div>
           </div>
         </div>

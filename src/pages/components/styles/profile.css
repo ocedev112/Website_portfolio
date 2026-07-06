@@ -1,231 +1,172 @@
-.profile_container{
-    min-height: 100vh;
-    height: auto;
-    width: 100dvw;
-    background: white;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    
+.profile_container {
+  min-height: 100vh;
+  height: auto;
+  width: 100dvw;
+  background: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 120px;
 }
 
-.profile_section_1{
-    min-height: 100svh;
-    height: auto;
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.1rem;
-    background: white;
-    z-index: 100;
-    border: 1px solid black;
-    border-right: 0px solid;
+.profile_file_section {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
-
-
-.profile_image{
-    aspect-ratio: 1/ 1;
-    width: 90%;
-    background-image: url("../image/profile.webp");
-    background-position: center;
-    background-size: cover;
-    filter: grayscale(100%);
-    filter: brightness(150%), grayscale(100%), contrast(150%);
+.file_top {
+  height: 1.6rem;
+  width: 25%;
+  display: block;
+  transform: translate(0%, 5%);
 }
 
-.profile_name{
-    font-size: 2.3rem;
-    font-weight: 600;
-    text-transform: uppercase;
+.profile_header {
+  font-size: 2rem;
+  height: 3.1rem;
+  width: 100%;
+  text-align: start;
+  vertical-align: center;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgb(210, 210, 210);
 }
 
-.profile_role{
-    margin-bottom: 30px;
-    color: rgba(0, 0, 0, 0.563);
+.header_text {
+  padding-left: 20px;
 }
 
-.profile_section_2{
-    min-height: 100svh;
-    width: 5%;
-    border: 1px solid black;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-    background: white;
-    z-index: 100;
-
-   
+.profile_image {
+  float: left;
+  width: 150px;
+  height: 150px;
+  background-image: url("../image/profile.webp");
+  background-position: center;
+  background-size: cover;
+  filter: grayscale(70%);
+  filter:
+    brightness(40%), grayscale(20%), contrast(90%), blur(0.5px), saturate(90%);
+  margin-right: 1rem;
 }
 
-.profile_section_2::after{
-    height: 30%;
-    width: 2.5%;
-    content: "";
-    position: absolute;
- 
-    background: white;
-    transform: translate(147%,-117%);
-    border: 1px solid black;
-    border-left: 0px solid white;
-    z-index: 100;
-    
+.main_profile_container {
+  min-height: 50vh;
+  height: auto;
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 10px;
+  background: rgb(210, 210, 210);
 }
 
-.profile{
-    font-size: 200%;
-    font-weight: 600;
-    transform: rotate('90deg');
-    text-transform: uppercase;
-    rotate: 90deg;
+.profile {
+  min-height: 100%;
+  height: auto;
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 4%;
 }
 
-
-
-.profile_section_3{
-    min-height: 100%;
-    height: auto;
-    width: 43%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
-    margin: 4%;
-    transform: translateX(-100%);
-    transition: all 0.9s ease;
-    opacity: 0;
+.profile_section_container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-
-
-.profile_paragraph{
-    height: 50%;
-    width: 100%;
-    padding: 10px;
-    padding-top: 50px;
- 
+.profile_section_header {
+  width: 100%;
+  text-transform: uppercase;
+  border-bottom: 1px dashed black;
 }
 
-.profile_prog_lang{
-    padding-left: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.2rem;
-   
-    
+.profile_section_1 {
+  width: 100%;
 }
 
-.languages{
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    gap: 1rem;
-    ;
+.profile_section {
+  width: 100%;
 }
 
-.lang_header{
-
-    width: 100%;
-    background: rgba(51, 50, 50, 0.348);
+.sub_section {
+  width: 90%;
+  text-transform: uppercase;
+  border-bottom: 1px dashed black;
+  margin-left: auto;
+  font-size: 1rem;
 }
 
-.profile_domains{
-    height: 180px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    
-    gap: 1rem;
-    cursor: pointer;
+.sub_title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.profile_domain{
-    height: 200px;
-    width: 200px;
-    border: 1px solid rgba(0, 0, 0, 0.26);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
+.section_list {
+  width: 85%;
+  height: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
-.profile_domain_icon{
-    height: 50px;
-    width: 50px;
-    background-size: cover;
+.section_item {
+  font-size: 1rem;
+  font-weight: 300;
 }
 
-.profile_tools{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 3rem;
+.contact_ways {
+  width: 95%;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
 }
 
-.profile_tool{
-    height: 60px;
-    width: 60px;
-    border: 1px solid rgba(0, 0, 0, 0.29);
-    background-size: cover;
+.contacts {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: rgba(0, 0, 0, 0.449);
+  cursor: pointer;
+  font-size: 0.9rem;
 }
 
-#react{
-    background-image: url("../image/react-svgrepo-com.svg")
+.contacts:hover {
+  color: black;
+}
+.contact_logo {
+  height: 20px;
+  width: 20px;
+  background-size: cover;
 }
 
-#tensorflow{
-    background-image: url("../image/tensorflow-svgrepo-com.svg");
+#linkedin_contact {
+  background-image: url("../image/linkedin-rounded-svgrepo-com.svg");
 }
 
-#pytorch{
-    background-image: url("../image/pytorch-svgrepo-com.svg");
-}
-
-
-#mongodb{
-    background-image: url("../image/mongodb-svgrepo-com.svg");
-}
-
-#next{
-    background-image: url("../image/next-js-svgrepo-com.svg");
-}
-
-
-#web_icon{
-    background-image: url("../image/web-svgrepo-com.svg");  
-}
-.profile_contacts{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-.contact_icon{
-   height: 40px;
-   width: 40px;
-   background-size: cover;
-}
-#profile_linkedin_icon{
-   background-image: url("../image/linkedin-rounded-svgrepo-com.svg");
-}
-
-#profile_gmail_icon{
-    background: url("../image/brand-google-gmail-svgrepo-com.svg");
-    background-size: 100%;
-}
-
-#ML_AI_icon{
-    background-image: url("../image/machine-learning-03-svgrepo-com.svg");
+#gmail_contact {
+  background: url("../image/brand-google-gmail-svgrepo-com.svg");
+  background-size: 100%;
 }

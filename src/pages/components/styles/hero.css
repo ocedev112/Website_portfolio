@@ -1,82 +1,96 @@
+.main_body {
+  display: flex;
+  background: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  gap: 0rem;
 
-.main_body{
-    display: grid;
-    background: none;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 100svh;
-    width: 100dvw;
-    gap: 0rem;
-    position: relative;
-    top: 0%;
- 
-
-    
-
+  border-bottom: 1px solid rgba(127, 124, 124, 0.43);
+  margin-top: 9.9svh;
+}
+.grid_body {
+  display: grid;
+  background: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+  gap: 0rem;
+  border-left: 1px solid rgba(127, 124, 124, 0.203);
+  border-right: 1px solid rgba(127, 124, 124, 0.203);
 }
 
-.hero_container{
-    padding: 20px;
-    pointer-events: none;
-    
-  
-     
+.hero_container {
+  width: 80%;
+  padding: 20px;
+  pointer-events: none;
 }
 
-.hero_title{
-  text-align: center;
-  
- 
+.hero_title {
+  text-align: start;
 }
 
-
-.hero_name{
-
+.hero_name {
   margin-bottom: 10px;
-  font-size: 1.2rem;
- 
+  font-size: 1.1rem;
 }
 
+.hero_role {
+  color: rgba(0, 0, 0, 0.318);
+}
 
-.grid-cell{
+.hero_button {
+  background: black;
+  padding: 10px 0px;
+  width: 150px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.contact {
+  background: white;
+  border: 1px solid black;
+  color: black;
+}
+
+.grid-cell {
   background-color: none;
-  border: 1px solid rgba(133, 129, 129, 0.247);
-  
+  border: 1px solid rgba(192, 185, 185, 0.305);
 }
-
 
 .grid-cell-glow-0 {
   background: #706e6e !important;
   box-shadow: 0 0 20px rgba(127, 124, 124, 0.8);
   background-attachment: fixed;
-  
 }
 
 .grid-cell-glow-1 {
   background: #434544 !important;
   box-shadow: 0 0 20px rgba(47, 48, 48, 0.8);
   background-attachment: fixed;
-  
 }
 
 .grid-cell-glow-2 {
   background: #2c2d2d !important;
   box-shadow: 0 0 20px rgba(30, 31, 31, 0.8);
   background-attachment: fixed;
-  
 }
 
 .grid-cell-glow-3 {
   background: #111211 !important;
   box-shadow: 0 0 20px rgba(13, 13, 13, 0.8);
-  
 }
 
-.cnavas_container{
+.cnavas_container {
   border: 1px solid black;
   pointer-events: none;
-} 
-
-
-
+}

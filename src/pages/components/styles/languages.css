@@ -1,0 +1,73 @@
+.langs_container {
+  width: 70%;
+  height: 10%;
+  border-right: 1px solid rgba(127, 124, 124, 0.43);
+  border-left: 1px solid rgba(127, 124, 124, 0.43);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.langs_track {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  animation: scrollLangs 6s linear infinite;
+}
+
+.lang {
+  height: 60%;
+  width: 80px;
+  flex-shrink: 0;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lang_python {
+  background-image: url("../image/languages/python.svg");
+}
+
+#lang_javascript {
+  background-image: url("../image/languages/javascript.svg");
+}
+#lang_tensorflow {
+  background-image: url("../image/languages/tensorflow.svg");
+}
+#lang_pytorch {
+  background-image: url("../image/languages/pytorch.svg");
+}
+
+#lang_pandas {
+  background-image: url("../image/languages/pandas.svg");
+}
+
+#lang_numpy {
+  background-image: url("../image/languages/numpy.svg");
+}
+
+#lang_docker {
+  background-image: url("../image/languages/docker.svg");
+}
+
+#lang_nodejs {
+  background-image: url("../image/languages/nodejs.svg");
+}
+
+#lang_react {
+  background-image: url("../image/languages/react.svg");
+}
+
+@keyframes scrollLangs {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

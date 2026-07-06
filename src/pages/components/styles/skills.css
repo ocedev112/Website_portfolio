@@ -1,0 +1,76 @@
+.skills_container {
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+}
+
+.skills_hero {
+  width: 90%;
+  text-transform: uppercase;
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(127, 124, 124, 0.43);
+  margin-bottom: 20px;
+}
+
+.skills {
+  width: 90%;
+  position: relative;
+}
+
+.skill {
+  width: 100%;
+}
+
+.stick_sentinel {
+  height: 0;
+}
+
+.skill_header {
+  position: sticky;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  background: white;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(127, 124, 124, 0.43);
+  font-size: 1.3rem;
+}
+
+.skill_no {
+  font-size: 0.8rem;
+}
+
+.skill_button {
+  margin-left: auto;
+  font-size: 2.3rem;
+  font-weight: 100;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.skill_button_open {
+  transform: rotate(45deg);
+}
+
+.skill_description {
+  background: white;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
+  max-width: 70ch;
+  overflow: hidden;
+  transition: max-height 1s ease;
+  white-space: pre-line;
+}
