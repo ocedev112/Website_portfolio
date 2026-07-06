@@ -62,6 +62,12 @@ a:hover {
       width: 85% !important;
     }
 
+    .hero_buttons {
+      gap: 3rem !important;
+    }
+    .hero_button {
+      width: 90px !important;
+    }
     .navbar_container {
       width: 85% !important;
     }
