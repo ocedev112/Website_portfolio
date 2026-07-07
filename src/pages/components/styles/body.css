@@ -63,10 +63,12 @@ a:hover {
     }
 
     .hero_buttons {
-      gap: 1rem !important;
+      justify-content: flex-start;
+      width: 100%;
+      gap: 2rem !important;
     }
     .hero_button {
-      width: 120px !important;
+      width: 130px !important;
     }
     .navbar_container {
       width: 85% !important;
