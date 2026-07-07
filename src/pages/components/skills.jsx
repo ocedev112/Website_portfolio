@@ -1,5 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./styles/skills.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const skillsData = [
   {
@@ -50,60 +54,67 @@ const HEADER_HEIGHT = 80;
 const lastIndex = skillsData.length - 1;
 
 const Skills = () => {
-  const sentinelRefs = useRef([]);
+  const headerRefs = useRef([]);
+  const descRefs = useRef([]);
   const manualOverride = useRef(skillsData.map(() => false));
-  const hasClosed = useRef(skillsData.map(() => false));
+  const hasStacked = useRef(skillsData.map(() => false));
+  const isFirstRun = useRef(true);
+
   const [openState, setOpenState] = useState(
     skillsData.map((_, index) => index !== lastIndex),
   );
 
-  useEffect(() => {
-    let rafId = null;
+  useLayoutEffect(() => {
+    const triggers = [];
 
-    const update = () => {
-      setOpenState((prev) => {
-        let changed = false;
-        const next = [...prev];
+    for (let i = 0; i < lastIndex; i++) {
+      const target = i;
+      const nextHeader = headerRefs.current[i + 1];
+      if (!nextHeader) continue;
 
-        for (let i = 0; i < lastIndex; i++) {
-          if (manualOverride.current[i]) continue;
-          if (hasClosed.current[i]) continue;
+      const close = () => {
+        if (manualOverride.current[target]) return;
+        if (hasStacked.current[target]) return;
+        hasStacked.current[target] = true;
+        setOpenState((prev) => {
+          if (!prev[target]) return prev;
+          const next = [...prev];
+          next[target] = false;
+          return next;
+        });
+      };
 
-          const sentinel = sentinelRefs.current[i];
-          if (!sentinel) continue;
-
-          const lockAt = i * HEADER_HEIGHT;
-          const top = sentinel.getBoundingClientRect().top;
-
-          if (top <= lockAt) {
-            hasClosed.current[i] = true;
-            if (next[i] !== false) {
-              next[i] = false;
-              changed = true;
-            }
-          }
-        }
-
-        return changed ? next : prev;
+      const trigger = ScrollTrigger.create({
+        trigger: nextHeader,
+        start: "bottom bottom",
+        onEnter: close,
       });
 
-      rafId = null;
-    };
+      triggers.push(trigger);
+    }
 
-    const onScroll = () => {
-      if (rafId === null) rafId = requestAnimationFrame(update);
-    };
-
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      if (rafId !== null) cancelAnimationFrame(rafId);
-    };
+    return () => triggers.forEach((trigger) => trigger.kill());
   }, []);
+
+  useLayoutEffect(() => {
+    descRefs.current.forEach((el, i) => {
+      if (!el) return;
+
+      if (isFirstRun.current) {
+        gsap.set(el, { height: openState[i] ? "auto" : 0 });
+        return;
+      }
+
+      gsap.to(el, {
+        height: openState[i] ? "auto" : 0,
+        duration: 0.45,
+        ease: "power2.out",
+        overwrite: true,
+      });
+    });
+
+    isFirstRun.current = false;
+  }, [openState]);
 
   const toggle = (index) => {
     manualOverride.current[index] = true;
@@ -117,11 +128,8 @@ const Skills = () => {
         {skillsData.map((skill, index) => (
           <div className="skill" key={skill.name}>
             <div
-              className="stick_sentinel"
-              ref={(el) => (sentinelRefs.current[index] = el)}
-            />
-            <div
               className="skill_header"
+              ref={(el) => (headerRefs.current[index] = el)}
               style={{ top: `${index * HEADER_HEIGHT}px`, zIndex: 10 + index }}
             >
               <div className="skill_no">{index + 1}</div>
@@ -137,7 +145,7 @@ const Skills = () => {
             </div>
             <div
               className="skill_description"
-              style={{ maxHeight: openState[index] ? "260px" : "0px" }}
+              ref={(el) => (descRefs.current[index] = el)}
             >
               {skill.description}
             </div>
