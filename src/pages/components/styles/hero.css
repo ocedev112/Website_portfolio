@@ -50,8 +50,8 @@
   color: white;
   display: flex;
   justify-content: center;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
   pointer-events: auto;
   cursor: pointer;
 }
@@ -64,7 +64,7 @@
 
 .grid-cell {
   background-color: none;
-  border: 1px solid rgba(192, 185, 185, 0.305);
+  border: 0.25px solid rgba(192, 185, 185, 0.305);
 }
 
 .grid-cell-glow-0 {
