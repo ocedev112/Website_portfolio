@@ -9,7 +9,7 @@
 }
 
 .menu_options_container {
-  width: 60%;
+  width: 25%;
   display: flex;
   justify-content: flex-start;
 }
@@ -25,7 +25,7 @@
   transition: all 0.3s ease;
   transform-origin: left;
   color: rgba(0, 0, 0, 0.612);
-  font-size: 1rem !important;
+  font-size: 0.9rem !important;
 }
 
 .menu_options:hover {
