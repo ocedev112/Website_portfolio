@@ -107,6 +107,10 @@ a:hover {
     .file_top {
       width: 50% !important;
     }
+    .profile_file_section,
+    .main_profile_container {
+      width: 90% !important;
+    }
 
     .profile {
       width: 95% !important;
