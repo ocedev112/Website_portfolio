@@ -4,7 +4,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 80%;
+  height: 100%;
   width: 100%;
   gap: 0rem;
 
@@ -18,7 +18,7 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
-  width: 80%;
+  width: 100%;
   gap: 0rem;
   border-left: 1px solid rgba(127, 124, 124, 0.203);
   border-right: 1px solid rgba(127, 124, 124, 0.203);
@@ -37,6 +37,8 @@
 .hero_name {
   margin-bottom: 10px;
   font-size: 1.1rem;
+  width: 100%;
+  text-align: center;
 }
 
 .hero_role {
@@ -64,12 +66,12 @@
 
 .grid-cell {
   background-color: none;
-  border: 0.25px solid rgba(192, 185, 185, 0.305);
+  border: 0.25px solid rgba(192, 185, 185, 0.175);
 }
 
 .grid-cell-glow-0 {
   background: #706e6e !important;
-  box-shadow: 0 0 20px rgba(127, 124, 124, 0.8);
+  box-shadow: 0 0 20px rgba(127, 124, 124, 0.558);
   background-attachment: fixed;
 }
 

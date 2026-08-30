@@ -119,7 +119,7 @@ const Hero = () => {
             <h1 className="hero_name self-start  uppercase">
               olewuenyi emmanuel
             </h1>
-            <h2 className="hero_title  text-7xl font-semibold  uppercase">
+            <h2 className="hero_title  text-5xl font-semibold  uppercase">
               Building Software & Models
             </h2>
           </div>

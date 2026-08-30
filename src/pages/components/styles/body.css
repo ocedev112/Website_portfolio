@@ -58,8 +58,8 @@ a:hover {
   }
 
   @media (max-width: 667px) {
-    .grid_body {
-      width: 85% !important;
+    .hero_name {
+      text-align: start !important;
     }
 
     .hero_buttons {
@@ -71,7 +71,9 @@ a:hover {
       width: 130px !important;
     }
     .navbar_container {
-      width: 85% !important;
+      width: 90% !important;
+      border-left: 0px solid !important;
+      border-right: 0px solid !important;
     }
     .project_hero {
       font-size: 1.6rem !important;
@@ -93,9 +95,6 @@ a:hover {
       display: none;
     }
 
-    .langs_container {
-      width: 85% !important;
-    }
     .project_container {
       width: 100% !important;
     }
