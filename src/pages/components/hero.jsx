@@ -120,27 +120,27 @@ const Hero = () => {
               olewuenyi emmanuel
             </h1>
             <h2 className="hero_title  text-7xl font-semibold  uppercase">
-              Building great software
+              Building Software & Models
             </h2>
           </div>
           <div className="hero_roles flex justify-center items-center  gap-2 pb-3">
-            <div className="hero_role"> AI/ML Engieering</div>
+            <div className="hero_role"> AI/ML Engineering</div>
             <div className="hero_role">Full Stack Development</div>
           </div>
           <div className="hero_buttons flex justify-center items-center  gap-10">
             <div
               className="hero_button text-white uppercase"
-              onClick={handleDownload}
-            >
-              View Resume
-            </div>
-            <div
-              className="hero_button contact uppercase"
               onClick={() =>
                 (window.location.href = "mailto:olewuenyie@example.com")
               }
             >
               Get in touch
+            </div>
+            <div
+              className="hero_button contact uppercase"
+              onClick={handleDownload}
+            >
+              View Resume
             </div>
           </div>
         </div>
